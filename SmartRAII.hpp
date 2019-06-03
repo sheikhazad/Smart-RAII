@@ -18,15 +18,12 @@ using namespace std;
 class SmartRAII
 {
 	public:
-
+                //Just to show how try-catch can be used in constructor
 		SmartRAII(string iFile) try :m_sFileName(iFile){
 		}
 		catch(const exception& ex){
 		    cerr<< ex.what() << endl;
 			throw runtime_error("Failed to create SmartRAII object.");
-		}
-		catch(...){
-		    throw runtime_error("Failed to create SmartRAII object.");
 		}
 
 	    void readInputFile();
